@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Medidas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h2>Conversor de Medidas</h2>
+
+  <div class="conversor">
+    <select id="tipo" onchange="atualizarUnidades()">
+      <option value="comprimento">Comprimento</option>
+      <option value="area">Área</option>
+      <option value="massa">Massa</option>
+    </select>
+
+    <div class="linha">
+      <select id="de"></select>
+      <button id="inverter" onclick="inverterUnidades()">⇄</button>
+      <select id="para"></select>
+    </div>
+
+    <div class="linha">
+      <input id="entrada" type="number" placeholder="Valor">
+      <input id="saida" type="text" placeholder="Resultado" readonly>
+    </div>
+
+    <button onclick="converter()">Converter</button>
+  </div>
+
+    <script src="src/conversor.js"></script>
+    <script src="tests/unit.test.js"></script>
+    <script src="tests/component.test.js"></script>
+</body>
+</html>
+

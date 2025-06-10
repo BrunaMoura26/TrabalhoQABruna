@@ -63,7 +63,23 @@ function converter() {
   const para = document.getElementById("para").value;
   const saida = document.getElementById("saida");
 
-  if (isNaN(valor)) {
+  function converterValor(valor, tipo, de, para) {
+  const unidades = {
+    comprimento: { m: 1, km: 1000, cm: 0.01 },
+    area: { "m²": 1, "km²": 1000000, "cm²": 0.0001 },
+    massa: { kg: 1, g: 0.001, mg: 0.000001 }
+  };
+
+  if (!unidades[tipo] || !unidades[tipo][de] || !unidades[tipo][para]) {
+    throw new Error("Unidade inválida");
+  }
+
+  const emBase = valor * unidades[tipo][de];
+  const convertido = emBase / unidades[tipo][para];
+  return convertido;
+}
+
+if (isNaN(valor)) {
     saida.value = "Valor inválido";
     return;
   }

@@ -16,4 +16,15 @@ function runUnitTests() {
     if (converterValor(50,"comprimento", "cm", "m" ) !== 0.5) throw new Error("Esperado 5.000.000 m²");
   });
   
+  testar("UNIT - Conversão com 0", () => {
+    if (converterValor(0,"comprimento", "cm", "m" ) !== 0) throw new Error("Esperado 0");
+  });
+
+  testar("UNIT - Conversão valores altos", () => {
+    if (converterValor(1,"area", "km²", "cm²" ) !== 10000000000) throw new Error("Esperado 10000000000");
+  });
+
+  testar("UNIT - Teste com String", () => {
+    if (converterValor("teste", "massa", "kg", "g") !== 10000) throw new Error("Esperado aceitar apenas números");
+  });
 }

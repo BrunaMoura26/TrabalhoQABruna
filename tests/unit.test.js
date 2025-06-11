@@ -1,19 +1,19 @@
-// Função pura para testes
-function converterValor(valor, fator) {
-  return valor * fator;
-}
-
 // Função de testes unitários
 function runUnitTests() {
-  testar("UNIT - Conversão de 2 km para m (fator 1000)", () => {
-    if (converterValor(2, 1000) !== 2000) throw new Error("Esperado 2000");
+  testar("UNIT - Conversão de km para m", () => {
+    if (converterValor(5, "comprimento", "km", "m") !== 5000) throw new Error("Esperado 5000 quilômetros");
   });
 
-  testar("UNIT - Conversão de 500 m para km (fator 0.001)", () => {
-    if (converterValor(500, 0.001) !== 0.5) throw new Error("Esperado 0.5");
+  testar("UNIT - Conversão de kg para g", () => {
+    if (converterValor(10, "massa", "kg", "g" ) !== 10000) throw new Error("Esperado 10.000 centímetros");
   });
 
-  testar("UNIT - Quebrar propositalmente", () => {
-    if (converterValor(3, 4) !== 8) throw new Error("Esperado 8"); // Isso vai falhar
+  testar("UNIT - Conversão de km² para m²", () => {
+    if (converterValor(5,"area", "km²", "m²" ) !== 5000000) throw new Error("Esperado 5.000.000 m²");
   });
+
+  testar("UNIT - Conversão cm para m", () => {
+    if (converterValor(50,"comprimento", "cm", "m" ) !== 0.5) throw new Error("Esperado 5.000.000 m²");
+  });
+  
 }

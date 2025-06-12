@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: #d58df7;
   color: rgb(14, 13, 13);
   font-family: Arial, sans-serif;
@@ -6,7 +6,6 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  border-radius: 50%;
 }
 
 h2 {
@@ -61,4 +60,105 @@ button {
 #saida {
   background-color: #b05bff;
   color: rgb(8, 0, 0);
+} */
+
+body {
+  background-color: #d58df7;
+  color: #0e0d0d;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #08010c;
+  font-size: 28px;
+}
+
+.conversor {
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+select,
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 120px;
+  margin: 5px;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #b05bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #9e47e8;
+}
+
+#inverter {
+  background-color: #b05bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+
+#inverter:hover {
+  background-color: #9e47e8;
+}
+
+#saida {
+  background-color: #f1e9ff;
+  color: #000;
+  font-weight: bold;
+}
+
+#testes-resultados {
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  white-space: pre-line;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
 }

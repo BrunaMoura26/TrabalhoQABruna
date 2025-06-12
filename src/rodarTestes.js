@@ -1,12 +1,13 @@
 function testar(nomeDoTeste, funcaoDeTeste) {
-    const resultadosDiv = document.getElementById("testes-resultados");
-    try {
-        funcaoDeTeste();
-        resultadosDiv.textContent += `✅ ${nomeDoTeste}\n`;
-    } catch (erro) {
-        resultadosDiv.textContent += `❌ ${nomeDoTeste} - ${erro.message}\n`;
-    }
+  const resultadosDiv = document.getElementById("testes-resultados");
+  try {
+    funcaoDeTeste();
+    resultadosDiv.innerHTML += `✅ ${nomeDoTeste}<br>`;
+  } catch (erro) {
+    resultadosDiv.innerHTML += `❌ ${nomeDoTeste} - ${erro.message}<br>`;
+  }
 }
+
 
 document.getElementById("rodarTestesComponentBtn").addEventListener("click", () => {
     document.getElementById("testes-resultados").textContent = "";
